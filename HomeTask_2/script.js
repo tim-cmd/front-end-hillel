@@ -1,7 +1,7 @@
 const ACTIONS_ARR = ['+', '-', '/', '*'];
 const INPUT_NUM_MSG = 'Please enter valid Number.';
 const INPUT_ACTION_MSG = 'Choose an action from ' + ACTIONS_ARR.join(' , ');
-const INVALID_INPUT_ERR = 'Invalid format. Try again.';
+const INVALID_INPUT_ERR = 'Invalid format. ';
 
 const firstInput = askNumber();
 const secondInput = askNumber();
@@ -13,17 +13,17 @@ const expression = `${firstInput} ${action} ${secondInput} = ${result}`;
 alert(expression);
 
 function askNumber(){
-  let input = prompt(INPUT_NUM_MSG);
+  let input = prompt(INPUT_NUM_MSG, 0);
   while(!isValidNum(input)){
-    input = prompt(INVALID_INPUT_ERR);
+    input = prompt(INVALID_INPUT_ERR + INPUT_NUM_MSG, input);
   }
   return input.trim();
 }
 
 function askAction(){
-  let input = prompt(INPUT_ACTION_MSG);
+  let input = prompt(INPUT_ACTION_MSG, '+');
   while(!isValidAction(input)){
-    input = prompt(INVALID_INPUT_ERR);
+    input = prompt(INVALID_INPUT_ERR + INPUT_ACTION_MSG, input);
   }
   return input.trim();
 }
