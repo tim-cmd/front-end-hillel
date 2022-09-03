@@ -14,8 +14,8 @@ const { aggregation, result } = useArray
     : calculateByLoop(numsCount, action);
 
 const expression = `${aggregation} = ${result}`;
-
 alert(expression);
+
 
 function getNumber(label, minVal){
   let input = minVal; 
