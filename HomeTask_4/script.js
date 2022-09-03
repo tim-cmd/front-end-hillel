@@ -32,7 +32,7 @@ function getAction(label){
     input = prompt(label, input);
   } while(!isValidAction(input));
 
-  return input.trim();
+  return input;
 }
 
 function isValidNum(minVal, input){
