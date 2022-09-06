@@ -1,8 +1,8 @@
 const supportedActions = { 
-  "+": (a, b) => a + b,
-  "-": (a, b) => a - b,
-  "*": (a, b) => a * b,
-  "/": (a, b) => a / b
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+  '/': (a, b) => a / b
 }
 
 const action = getAction('Choose an action from "+", "-", "/", "*"');
@@ -48,9 +48,9 @@ function calculateByLoop(count, operator){
   let aggrStr = total.toString();
   
   for(let i = 2; i <= count; i++){
-    let num_i = getNumber('Enter operand №'+i);
-    aggrStr += operator + num_i;
-    total = supportedActions[operator](total, num_i);
+    let currentNum = getNumber('Enter operand №'+i);
+    aggrStr += operator + currentNum;
+    total = supportedActions[operator](total, currentNum);
   }
   return { result : total, aggregation : aggrStr};
 }
