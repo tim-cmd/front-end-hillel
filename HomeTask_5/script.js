@@ -18,7 +18,7 @@ function getNumbers(label){
     console.log('input', input);
   } while(!isValidNumbers(input));
   
-  return input.split(',').map((elem) => { return +elem });
+  return input.split(',').map(Number);
 }
 
 function getAction(label){
