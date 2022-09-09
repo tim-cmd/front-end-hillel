@@ -21,12 +21,20 @@ const students = [
   }
 ];
 
+/**
+ * @param {object} student students element 
+ * @returns {number} student marks avg
+ */
 function calculateStudentAverageMark(student){
   return calculateAverage(student.marks);
 }
 
+/**
+ * @param {students[]} studentsList 
+ * @returns {number} all students marks avg
+ */
 function calculateGroupAverageMark(studentsList){
-  let allMarks = []
+  let allMarks = [];
   studentsList.forEach(student => allMarks = allMarks.concat(student.marks));
   // const allMarks = studentsList.reduce((accum, current) => accum = accum.concat(current.marks),[]);
   return calculateAverage(allMarks);
