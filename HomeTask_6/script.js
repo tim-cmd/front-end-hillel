@@ -34,9 +34,9 @@ function calculateStudentAverageMark(student){
  * @returns {number} all students marks avg
  */
 function calculateGroupAverageMark(studentsList){
-  let allMarks = [];
-  studentsList.forEach(student => allMarks = allMarks.concat(student.marks));
-  // const allMarks = studentsList.reduce((accum, current) => accum = accum.concat(current.marks),[]);
+  // let allMarks = [];
+  // studentsList.forEach(student => allMarks = allMarks.concat(student.marks));
+  const allMarks = studentsList.reduce((accum, current) => accum.concat(current.marks),[]);
   return calculateAverage(allMarks);
 }
 
