@@ -2,7 +2,7 @@ const EDIT_BTN_CLASS = 'edit-btn';
 const DELETE_BTN_CLASS = 'del-btn';
 
 const rowTemplate = document.querySelector('#rowTemplate').innerHTML;
-const formEl = document.querySelector('#editForm');
+const formElem = document.querySelector('#editForm');
 const formInputs = document.querySelectorAll('input');
 const dataTable = document.querySelector('#dataTable');
 const submitBtm = document.querySelector('#submitBtm');
@@ -11,7 +11,7 @@ let isEditing = false;
 let editRowEl = null;
 
 formInputs.forEach((input) => input.addEventListener('input', onInputsChange));
-formEl.addEventListener('submit', onFormSubmit);
+formElem.addEventListener('submit', onFormSubmit);
 dataTable.addEventListener('click', onRowClick);
 
 disableFormSubmit();
@@ -76,7 +76,7 @@ function getFormData() {
 }
 
 function resetFormData() {
-  formInputs.forEach((input) => (input.value = ''));
+  formElem.reset();
   disableFormSubmit();
 }
 
