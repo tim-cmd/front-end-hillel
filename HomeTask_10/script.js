@@ -15,7 +15,7 @@ formEl.addEventListener('submit', onFormSubmit);
 dataTable.addEventListener('click', onRowClick);
 
 disableFormSubmit();
-generateData(10);
+generateData(5);
 
 function generateData(count) {
   for (let i = 0; i < count; i++) {
@@ -44,10 +44,10 @@ function onFormSubmit(event) {
 
 function onRowClick(event) {
   if (event.target.classList.contains(EDIT_BTN_CLASS)) {
-    editContact(event.target.parentElement.parentElement);
+    editContact(event.target.closest('tr'));
   }
   if (event.target.classList.contains(DELETE_BTN_CLASS)) {
-    removeContact(event.target.parentElement.parentElement);
+    removeContact(event.target.closest('tr'));
   }
 }
 
@@ -63,16 +63,16 @@ function isFormInvalid() {
 
 function isValidated(el) {
   const isValid = el.value !== null && el.value !== '';
-  el.setCustomValidity(isValid ? '' : 'Invalid field');
+  el.setCustomValidity(isValid ? '' : 'Please enter a value');
   return isValid;
 }
 
 function getFormData() {
-  const con = prepareContact();
+  const contact = prepareContact();
   formInputs.forEach((input) => {
-    con[input.id] = input.value;
+    contact[input.id] = input.value;
   });
-  return con;
+  return contact;
 }
 
 function resetFormData() {
@@ -87,9 +87,9 @@ function addNewRow(contact) {
 
 function generateNewRowHtml({ firstName, lastName, phoneNum }) {
   let newRowEl = rowTemplate
-    .replaceAll('{firstName}', firstName)
-    .replaceAll('{lastName}', lastName)
-    .replaceAll('{phoneNum}', phoneNum);
+    .replace('{firstName}', firstName)
+    .replace('{lastName}', lastName)
+    .replace('{phoneNum}', phoneNum);
   return newRowEl;
 }
 
@@ -108,10 +108,7 @@ function editContact(rowEl) {
   editRowEl = rowEl;
 
   const rowData = rowEl.children;
-
-  formInputs[0].value = rowData[0].textContent;
-  formInputs[1].value = rowData[1].textContent;
-  formInputs[2].value = rowData[2].textContent;
+  formInputs.forEach((input, i) => (input.value = rowData[i].textContent));
 }
 
 function removeContact(rowEl) {
