@@ -1,5 +1,3 @@
-'use strict';
-
 function Calculator(value) {
   this.value = value;
   this.set = (operand) => (this.value = operand);
