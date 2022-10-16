@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(270deg, #07d2ed, #0088ff);
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0px auto;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}
