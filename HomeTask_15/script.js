@@ -27,10 +27,10 @@ function init() {
 
 function fetchTodoList() {
   fetch(TODO_ENDPOINT)
-    .then((response) => (response.status == 200 ? response.json() : null))
+    .then((response) => (response.status == 200 ? response.json() : []))
     .then((data) => {
       console.log('Success:', data);
-      todoList = data || [];
+      todoList = data;
       renderList();
     })
     .catch((error) => {
