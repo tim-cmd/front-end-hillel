@@ -208,7 +208,6 @@ function removeContact(id) {
     .then((data) => {
       console.log('DELETE resp', data);
       contactsList = contactsList.filter((contact) => contact.id !== id);
-      resetFormData();
     })
     .catch((error) => {
       alert('DELETE request error: ' + error);
