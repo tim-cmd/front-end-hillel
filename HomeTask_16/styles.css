@@ -1,0 +1,108 @@
+body {
+  background: linear-gradient(270deg, #07d2ed, #0088ff);
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  /* width: 100%; */
+  /* max-width: 38rem; */
+  margin: 0px auto;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  font-weight: bold;
+}
+
+td,
+th {
+  max-width: 20%;
+  border: 1px solid #1c1b1b;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:hover {
+  background-color: #f0d8d8;
+}
+
+span {
+  padding: 7px 7px 7px 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.del-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #3662f4;
+  color: white;
+}
+
+.footer {
+  padding: 30px 40px;
+}
+
+input {
+  max-width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+input:invalid {
+  background-color: #f4433650;
+  border: 2px solid red;
+}
+
+button {
+  background-color: #1393ce;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #42a0cc;
+}
+
+#submitBtn {
+  /* width: 15%; */
+  background-color: #07bc10;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background-color: #05a10d;
+}
+
+#submitBtn:disabled {
+  cursor: not-allowed;
+  background-color: #8ca88d;
+}

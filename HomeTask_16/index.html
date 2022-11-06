@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" async></script>
+    <title>Contact List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button id="refreshBtm">Refresh</button>
+        <button id="resetBtm">Reset Form</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody id="dataTable"></tbody>
+        <tfoot>
+          <form id="editForm">
+            <tr>
+              <td><input id="name" type="text" /></td>
+              <td><input id="surname" type="text" /></td>
+              <td><input id="email" type="text" /></td>
+              <td><button id="submitBtn">Save</button></td>
+            </tr>
+          </form>
+        </tfoot>
+      </table>
+    </div>
+
+    <script id="rowTemplate" type="text/template">
+      <tr class="contact-item" data-contact-id="{id}">
+        <td>{name}</td>
+        <td>{surname}</td>
+        <td>{email}</td>
+        <td>
+          <span class="edit-btn">&#9998</span>
+          <span class="del-btn">&#10006</span>
+        </td>
+      </tr>
+    </script>
+  </body>
+</html>
