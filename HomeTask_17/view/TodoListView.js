@@ -13,7 +13,6 @@ class TodoListView {
     </li>`;
 
   uList = null;
-  form = null;
   #config = null;
 
   static generateTodoItemHtml({ id, title, isDone }) {
