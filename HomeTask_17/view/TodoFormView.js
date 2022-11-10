@@ -44,7 +44,7 @@ class TodoFormView {
     const mainInput = document.createElement('input');
     mainInput.type = 'text';
     mainInput.placeholder = 'Type new Item';
-    mainInput.addEventListener('input', () => this.handleChange());
+    mainInput.addEventListener('input', () => this.handleFormChange());
     this.#inputEl = mainInput;
 
     div.append(mainInput);
@@ -52,7 +52,7 @@ class TodoFormView {
     form.append(div);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      this.saveItem(e);
+      this.submitForm(e);
     });
 
     this.form = form;
@@ -63,11 +63,8 @@ class TodoFormView {
     this.#inputEl.value = title;
   }
 
-  handleChange() {
-    const isInvalid =
-      this.#inputEl.value === null || this.#inputEl.value === '';
-    this.#inputEl.setCustomValidity(isInvalid ? 'Please enter a title' : '');
-    this.#submitBtn.disabled = isInvalid;
+  handleFormChange() {
+    this.#config.onChange(this.#inputEl, this.#submitBtn);
   }
 
   saveItem() {
