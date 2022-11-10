@@ -67,7 +67,7 @@ class TodoFormView {
     this.#config.onChange(this.#inputEl, this.#submitBtn);
   }
 
-  saveItem() {
+  submitForm() {
     this.#config.onSubmit(this.#editInput.value, this.#inputEl.value);
   }
 
