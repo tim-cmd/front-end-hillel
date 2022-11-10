@@ -11,7 +11,6 @@ class TodoController {
     container.append(this.#todoListView.uList);
 
     this.#todoFormView = new TodoFormView({
-      onChange: (inputEl, buttonEl) => this.validateForm(inputEl, buttonEl),
       onSubmit: (id, value) => this.save(id, value),
     });
     container.append(this.#todoFormView.form);
@@ -20,12 +19,6 @@ class TodoController {
     this.#todosCollection
       .fetchList()
       .then(() => this.#todoListView.renderList(this.#todosCollection.list));
-  }
-
-  validateForm(inputEl, buttonEl) {
-    const isInvalid = inputEl.value === null || inputEl.value === '';
-    inputEl.setCustomValidity(isInvalid ? 'Please enter a title' : '');
-    buttonEl.disabled = isInvalid;
   }
 
   save(id, value) {
