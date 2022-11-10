@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../common/js/utils.js" defer></script>
+    <script src="../common/js/RestApi.js" defer></script>
+    <script src="view/TodoListView.js" defer></script>
+    <script src="view/TodoFormView.js" defer></script>
+    <script src="model/TodosCollection.js" defer></script>
+    <script src="controller/TodoController.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Simple TODO List</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>TODO List MVC</h1>
+      <!-- <form id="todoForm">
+        <input type="hidden" id="editId" />
+        <div id="inputBlock" class="footer">
+          <input id="itemInp" type="text" placeholder="Type new Item" />
+          <button id="saveBtn" type="submit" class="save-btn">Save</button>
+        </div>
+      </form>
+      <ul id="uList">
+      </ul> -->
+    </div>
+
+    <script id="liTemplate" type="text/template">
+      <li class="todo-item" data-item-id="{itemId}" data-is-checked="{isDone}">
+        {itemLabel}
+        <button type="button" class="edit-btn">&#9998</button>
+        <button type="button" class="remove-btn">&#10006</button>
+      </li>
+    </script>
+  </body>
+</html>
