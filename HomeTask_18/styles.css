@@ -27,8 +27,16 @@ textarea {
   max-width: 100%;
 }
 
+input {
+  width: 70%;
+  padding: 12px 7px;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+}
+
 button {
-  padding: 12px 7px 12px 7px;
+  padding: 12px 7px;
   border-radius: 10px;
   border: none;
   background-color: inherit;

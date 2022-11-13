@@ -1,6 +1,5 @@
 class NotesFormView {
   el = null;
-  #formInput = '';
   #config = null;
 
   static formTemplate = `
@@ -25,6 +24,6 @@ class NotesFormView {
 
   submitForm(e) {
     e.preventDefault();
-    this.#config.onSubmit(this.#formInput);
+    this.#config.onSubmit('');
   }
 }
