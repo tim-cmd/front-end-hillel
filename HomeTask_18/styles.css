@@ -17,14 +17,15 @@ h1 {
 }
 
 div {
-  border-radius: 10px;
+  border-radius: inherit;
 }
 
 textarea {
   display: block;
   border: none;
   background-color: inherit;
-  max-width: 100%;
+  max-width: 95%;
+  border-radius: inherit;
 }
 
 input {
@@ -32,7 +33,7 @@ input {
   padding: 12px 7px;
   display: inline-block;
   border: none;
-  border-radius: 10px;
+  border-radius: inherit;
 }
 
 button {
