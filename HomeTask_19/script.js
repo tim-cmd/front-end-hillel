@@ -2,23 +2,18 @@ const PHOTO_URL = 'https://jsonplaceholder.typicode.com/photos?_limit=10';
 const CONTAINER_CLASS = '.gallery';
 const $galleryEl = $(CONTAINER_CLASS);
 const api = new RestApi(PHOTO_URL);
-const itemTemplate = `
-<a href="{{url}}">
-    <img src="{{thumbnailUrl}}">
-</a>
-`;
-
-let photosList = [];
+const itemTemplate = $('#photeTemplate').html();
 
 init();
 
 function init() {
-  api.getList().then((data) => {
-    console.log(data);
-    photosList = data;
-    renderList(photosList);
-    callJqueryPlugin();
-  });
+  api
+    .getList()
+    .then((data) => {
+      console.log(data);
+      renderList(data);
+    })
+    .then(callJqueryPlugin);
 }
 
 function renderList(list) {
