@@ -3,7 +3,7 @@ const CONTAINER_CLASS = '.gallery';
 const $galleryEl = $(CONTAINER_CLASS);
 const api = new RestApi(PHOTO_URL);
 const itemTemplate = `
-<a href="{{url}}" data-imagelightbox="demo">
+<a href="{{url}}">
     <img src="{{thumbnailUrl}}">
 </a>
 `;
