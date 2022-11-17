@@ -29,7 +29,7 @@ function generateItemHtml(item) {
   return interpolate(itemTemplate, item);
 }
 
-function callJqueryPlugin(list) {
+function callJqueryPlugin() {
   Fancybox.bind(`${CONTAINER_CLASS} a`, {
     groupAll: true,
     on: {
