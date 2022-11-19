@@ -28,7 +28,7 @@ class NotesListView {
     const r = 200 + Math.floor(Math.random() * 56);
     const g = 200 + Math.floor(Math.random() * 56);
     const b = 200 + Math.floor(Math.random() * 56);
-    return 'rgb(' + r + ',' + g + ',' + b + ')';
+    return `rgb(${r}, ${g}, ${b})`;
   }
 
   static getItemId(el) {
