@@ -1,0 +1,5 @@
+function div(...argsArr) {
+  const result = argsArr.reduce((total, current) => (total /= current));
+  return result;
+}
+module.exports = div;
