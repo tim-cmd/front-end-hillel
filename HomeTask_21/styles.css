@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(270deg, #07d2ed, #0088ff);
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0px auto;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.message-item {
+  position: relative;
+  border-radius: 10px;
+  padding: 12px 8px 12px 40px;
+  background: #e4e3e3;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.messageItem:hover {
+  background: #ddd;
+}
+
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+input:invalid {
+  background-color: #f4433650;
+  border: 2px solid red;
+}
+
+button {
+  padding: 12px 7px 12px 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.save-btn {
+  width: 20%;
+  background-color: #0bd25b;
+  color: white;
+  margin: 8px 0;
+}
+
+.save-btn:hover {
+  background-color: #09b94f;
+}
+
+.save-btn:disabled {
+  background-color: #8ca88d;
+  cursor: not-allowed;
+}
