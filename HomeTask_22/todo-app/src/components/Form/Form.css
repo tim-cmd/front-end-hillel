@@ -1,0 +1,28 @@
+input {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+input:invalid {
+  background-color: #f4433650;
+  border: 2px solid red;
+}
+
+.save-btn {
+  width: 20%;
+  background-color: #0bd25b;
+  color: white;
+  margin: 8px 0;
+}
+
+.save-btn:hover {
+  background-color: #09b94f;
+}
+
+.save-btn:disabled {
+  background-color: #8ca88d;
+  cursor: not-allowed;
+}

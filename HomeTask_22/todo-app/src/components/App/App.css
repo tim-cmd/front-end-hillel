@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+button {
+  padding: 12px 7px 12px 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
