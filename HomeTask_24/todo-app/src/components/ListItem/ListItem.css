@@ -1,0 +1,34 @@
+.item {
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  padding: 12px 8px 12px 40px;
+  background: #e4e3e3;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.item:hover {
+  background: #ddd;
+}
+
+.item.done {
+  text-decoration: line-through;
+  background-color: #04aa6d;
+  color: #fff;
+}
+
+.item.done:hover {
+  background-color: #048052;
+}
+
+.remove-btn {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+
+.remove-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
