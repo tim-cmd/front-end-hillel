@@ -1,0 +1,13 @@
+body {
+  background: linear-gradient(270deg, #07d2ed, #0088ff);
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+  margin: 0px auto;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: table;
+}

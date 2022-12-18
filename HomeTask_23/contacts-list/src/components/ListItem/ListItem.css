@@ -1,0 +1,75 @@
+.divTableRow:nth-child(even) {
+  background: #d0e4f5;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTable.paleBlueRows .divTableCell,
+.divTable.paleBlueRows .divTableHead {
+  border: 1px solid #ffffff;
+  padding: 3px 2px;
+}
+.divTable.paleBlueRows .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.paleBlueRows .divTableRow:nth-child(even) {
+  background: #d0e4f5;
+}
+.divTable.paleBlueRows .divTableHeading {
+  background: #0b6fa4;
+  border-bottom: 5px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border-left: 2px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #d0e4f5;
+  border-top: 3px solid #444444;
+}
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+}
+
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableFoot {
+  display: table-footer-group;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+button {
+  padding: 12px 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.remove-btn {
+  padding: 7px 7px 7px 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #f44336;
+  color: white;
+}

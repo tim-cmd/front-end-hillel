@@ -1,0 +1,37 @@
+form {
+  display: inherit;
+}
+
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #d0e4f5;
+  border-top: 3px solid #444444;
+}
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+}
+
+.divTableFoot {
+  display: table-footer-group;
+}
+
+.save-btn {
+  padding: 12px 7px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #0bd25b;
+  color: white;
+  margin: 8px 0;
+}
+
+.save-btn:hover {
+  background-color: #09b94f;
+}
+
+.save-btn:disabled {
+  background-color: #8ca88d;
+  cursor: not-allowed;
+}
