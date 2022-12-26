@@ -1,0 +1,194 @@
+div.paleBlueRows {
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.divTable.paleBlueRows .divTableRow:nth-child(even) {
+  background: #d0e4f5;
+}
+
+.divTable {
+  display: table;
+  min-width: 45rem;
+}
+
+.divTableRow {
+  display: table-row;
+}
+form {
+  display: inherit;
+}
+
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #d0e4f5;
+  border-top: 3px solid #444444;
+}
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+}
+
+.divTableFoot {
+  display: table-footer-group;
+}
+
+.save-btn {
+  padding: 12px 7px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #0bd25b;
+  color: white;
+  margin: 8px 0;
+}
+
+.save-btn:hover {
+  background-color: #09b94f;
+}
+
+.save-btn:disabled {
+  background-color: #8ca88d;
+  cursor: not-allowed;
+}
+
+.divTable.paleBlueRows .divTableBody .divTableCell {
+  font-size: 13px;
+}
+
+.divTableBody {
+  display: table-row-group;
+}
+
+.divTable.paleBlueRows .divTableCell,
+.divTable.paleBlueRows .divTableHead {
+  border: 1px solid #ffffff;
+  padding: 3px 2px;
+}
+.divTable.paleBlueRows .divTableHeading {
+  background: #0b6fa4;
+  border-bottom: 5px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border-left: 2px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+
+.divTableRow:nth-child(even) {
+  background: #d0e4f5;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTable.paleBlueRows .divTableCell,
+.divTable.paleBlueRows .divTableHead {
+  border: 1px solid #ffffff;
+  padding: 3px 2px;
+}
+.divTable.paleBlueRows .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.paleBlueRows .divTableRow:nth-child(even) {
+  background: #d0e4f5;
+}
+.divTable.paleBlueRows .divTableHeading {
+  background: #0b6fa4;
+  border-bottom: 5px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border-left: 2px solid #ffffff;
+}
+.divTable.paleBlueRows .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #d0e4f5;
+  border-top: 3px solid #444444;
+}
+.paleBlueRows .tableFootStyle {
+  font-size: 14px;
+}
+
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableFoot {
+  display: table-footer-group;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+button {
+  padding: 12px 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.remove-btn {
+  padding: 7px 7px 7px 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #3662f4;
+  color: white;
+}
+
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 10px;
+}
+.error {
+  text-align: center;
+}
+
+.invalid-input input {
+  background-color: #f4433650;
+  border: 2px solid red;
+}
+
+.invalid-input .error {
+  color: red;
+}
