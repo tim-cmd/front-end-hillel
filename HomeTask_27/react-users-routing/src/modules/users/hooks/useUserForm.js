@@ -7,10 +7,16 @@ const EMPTY_USER = {
   surname: '',
   email: '',
 };
-export default function useUser(id) {
+const NON_TOUCHED_USER = {
+  name: false,
+  surname: false,
+  email: false,
+};
+export default function useUserForm(id) {
   const [user, setUser] = useState(EMPTY_USER);
   const [isValid, seIsValid] = useState(false);
   const [errors, setErrors] = useState(EMPTY_USER);
+  const [touched, setTouched] = useState(NON_TOUCHED_USER);
 
   useEffect(() => {
     if (isNaN(id)) {
@@ -23,14 +29,20 @@ export default function useUser(id) {
   useEffect(() => {
     const nErrors = { ...errors };
     for (const key in user) {
-      nErrors[key] = validate(user[key]);
+      if (touched[key]) {
+        nErrors[key] = validate(user[key]);
+      }
     }
     setErrors(nErrors);
-  }, [user]);
+  }, [user, touched]);
 
   useEffect(() => {
     seIsValid(Object.values(errors).join('').length === 0);
   }, [errors]);
+
+  function setIsTouched(field) {
+    setTouched({ ...touched, [field]: true });
+  }
 
   function validate(value) {
     return value === ''
@@ -67,6 +79,7 @@ export default function useUser(id) {
     user,
     isValid,
     errors,
+    setIsTouched,
     changeUser,
     saveUser,
   };

@@ -2,16 +2,21 @@ import { Box, Button, Paper, TextField } from '@mui/material';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 
 import React from 'react';
-import useUser from '../hooks/useUser';
+import useUserForm from '../hooks/useUserForm';
 
 function UserForm() {
   const { id } = useParams();
-  const { user, errors, isValid, changeUser, saveUser } = useUser(id);
+  const { user, errors, isValid, setIsTouched, changeUser, saveUser } =
+    useUserForm(id);
 
   const navigate = useNavigate();
 
   function onInputChange(e) {
     changeUser({ [e.target.name]: e.target.value });
+  }
+
+  function onInputBlur(e) {
+    setIsTouched([e.target.name]);
   }
 
   function onFormSubmit(e) {
@@ -39,6 +44,7 @@ function UserForm() {
           label="Name"
           value={user.name}
           onChange={onInputChange}
+          onBlur={onInputBlur}
           fullWidth
           error={errors.name !== ''}
           helperText={errors.name}
@@ -48,6 +54,7 @@ function UserForm() {
           label="Surname"
           value={user.surname}
           onChange={onInputChange}
+          onBlur={onInputBlur}
           fullWidth
           error={errors.surname !== ''}
           helperText={errors.surname}
@@ -57,6 +64,7 @@ function UserForm() {
           label="Email"
           value={user.email}
           onChange={onInputChange}
+          onBlur={onInputBlur}
           fullWidth
           error={errors.email !== ''}
           helperText={errors.email}
