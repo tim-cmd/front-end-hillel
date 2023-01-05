@@ -1,18 +1,11 @@
-input {
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border-radius: 10px;
-}
-
-input:invalid {
-  background-color: #f4433650;
-  border: 2px solid red;
+form {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 20px;
 }
 
 .save-btn {
-  width: 20%;
+  width: 90%;
   background-color: #0bd25b;
   color: white;
   margin: 8px 0;

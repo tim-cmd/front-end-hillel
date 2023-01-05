@@ -1,48 +1,56 @@
 import './App.css';
 
 import React, { Component } from 'react';
+import {
+  addTodo,
+  getTodosList,
+  removeTodo,
+  updateTodo,
+} from '../../services/todosService';
 
 import Form from '../Form/Form';
 import List from '../List/List';
 
 class App extends Component {
   state = {
-    list: [
-      { id: 1, title: 'Item 10', isDone: false },
-      { id: 2, title: 'Item 20', isDone: true },
-      { id: 3, title: 'Item 30', isDone: false },
-    ],
+    list: [],
   };
 
   toggleTodo = (id) => {
-    this.setState({
-      list: this.state.list.map((item) =>
-        item.id !== id
-          ? item
-          : {
-              ...item,
-              isDone: !item.isDone,
-            }
-      ),
+    const todo = this.state.list.find((item) => item.id === id);
+    updateTodo({ ...todo, isDone: !todo.isDone }).then((data) => {
+      this.setState({
+        list: this.state.list.map((item) => (item.id !== id ? item : data)),
+      });
     });
   };
 
   deleteTodo = (id) => {
-    this.setState({
-      list: this.state.list.filter((item) => item.id !== id),
+    removeTodo(id).then(() =>
+      this.setState({
+        list: this.state.list.filter((item) => item.id !== id),
+      })
+    );
+  };
+
+  createTodo = (newTodo) => {
+    addTodo({
+      ...newTodo,
+      isDone: false,
+    }).then((data) => {
+      this.setState({
+        list: [...this.state.list, data],
+      });
     });
   };
 
-  createTodo = ({ title }) => {
-    const newTodo = {
-      id: Date.now(),
-      title: title,
-      isDone: false,
-    };
-    this.setState({
-      list: [...this.state.list, newTodo],
-    });
-  };
+  componentDidMount() {
+    getTodosList().then((data) =>
+      this.setState({
+        list: data,
+      })
+    );
+  }
 
   render() {
     return (
