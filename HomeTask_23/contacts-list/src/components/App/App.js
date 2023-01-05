@@ -5,6 +5,7 @@ import {
   deleteContact,
   fetchContactsList,
   insertContact,
+  updateContact,
 } from '../../services/contactsService';
 
 import Form from '../Form/Form';
@@ -14,6 +15,18 @@ import ListHead from '../ListHead/ListHead';
 class App extends Component {
   state = {
     list: [],
+    tempContact: {
+      id: '',
+    },
+  };
+
+  saveContact = (contact) => {
+    if (contact.id) {
+      return this.updateExistingContact(contact);
+    } else {
+      delete contact.id;
+      return this.createContact(contact);
+    }
   };
 
   createContact = (newContact) => {
@@ -24,6 +37,30 @@ class App extends Component {
       this.setState({
         list: [...this.state.list, data],
       });
+    });
+  };
+
+  updateExistingContact = (newContact) => {
+    updateContact({
+      ...newContact,
+    }).then((data) => {
+      console.log('updated', data);
+      this.setState({
+        list: this.state.list.map((item) =>
+          item.id !== newContact.id ? item : data
+        ),
+        tempContact: {
+          id: '',
+        },
+      });
+    });
+  };
+
+  editContact = (contact) => {
+    console.log('editContact', contact);
+    this.setState({
+      ...this.state,
+      tempContact: { ...contact },
     });
   };
 
@@ -48,8 +85,12 @@ class App extends Component {
     return (
       <div className="divTable paleBlueRows">
         <ListHead />
-        <List list={this.state.list} onDelete={this.removeContact} />
-        <Form onSubmit={this.createContact} />
+        <List
+          list={this.state.list}
+          onDelete={this.removeContact}
+          onEdit={this.editContact}
+        />
+        <Form onSubmit={this.saveContact} contact={this.state.tempContact} />
       </div>
     );
   }

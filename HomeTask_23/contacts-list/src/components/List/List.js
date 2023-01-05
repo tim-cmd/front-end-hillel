@@ -13,6 +13,7 @@ export class List extends Component {
             key={item.id}
             contact={item}
             onDelete={this.props.onDelete}
+            onEdit={this.props.onEdit}
           />
         ))}
       </div>

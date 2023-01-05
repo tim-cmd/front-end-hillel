@@ -11,6 +11,7 @@ export class Form extends Component {
       surname: '',
       email: '',
     },
+    editId: '',
     touched: {},
     errors: {},
     isValid: false,
@@ -53,6 +54,7 @@ export class Form extends Component {
     e.preventDefault();
 
     const formData = {
+      id: this.state.editId,
       name: e.target.elements.name.value,
       surname: e.target.elements.surname.value,
       email: e.target.elements.email.value,
@@ -62,6 +64,22 @@ export class Form extends Component {
     this.setState({ ...Form.defState });
     e.target.reset();
   };
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('new props', props);
+    console.log('state', state);
+    if (props.contact.id !== '' && state.editId === '') {
+      const newState = {
+        ...Form.defState,
+        values: props.contact,
+        editId: props.contact.id,
+      };
+      console.log('SET NEW STATE', newState);
+      return newState;
+    } else {
+      return null;
+    }
+  }
 
   render() {
     return (

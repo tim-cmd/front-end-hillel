@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 export class TextField extends Component {
   render() {
-    console.log('field props', this.props);
+    // console.log('field props', this.props);
     let classes = this.props.classes;
     classes +=
       this.props.isTouched && this.props.error ? ' invalid-input ' : '';

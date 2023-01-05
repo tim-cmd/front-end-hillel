@@ -9,6 +9,12 @@ export class ListItem extends Component {
     this.props.onDelete(this.props.contact.id);
   };
 
+  onEditClick = (e) => {
+    e.stopPropagation();
+    console.log('onEditClick', this.props.contact);
+    this.props.onEdit(this.props.contact);
+  };
+
   render() {
     return (
       <div className="divTableRow">
@@ -16,6 +22,9 @@ export class ListItem extends Component {
         <div className="divTableCell">{this.props.contact.surname}</div>
         <div className="divTableCell">{this.props.contact.email}</div>
         <div className="divTableCell">
+          <button className="edit-btn" onClick={this.onEditClick}>
+            ✎
+          </button>
           <button className="remove-btn" onClick={this.onDeleteClick}>
             ✖
           </button>
