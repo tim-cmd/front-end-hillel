@@ -10,30 +10,24 @@ import Signup from './modules/common/auth/pages/Signup';
 import Users from './modules/admin/users/pages/Users';
 
 function App() {
-    return (
-        <Routes>
-            <Route path="" element={<Landing />} />
+  return (
+    <Routes>
+      <Route path="" element={<Landing />} />
 
-            <Route path="auth">
-                <Route
-                    path=""
-                    element={<Navigate replace={true} to="login" />}
-                />
-                <Route path="login" element={<Login />} />
-                <Route path="logout" element={<Logout />} />
-                <Route path="signup" element={<Signup />} />
-            </Route>
+      <Route path="auth">
+        <Route path="" element={<Navigate replace={true} to="login" />} />
+        <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
+        <Route path="signup" element={<Signup />} />
+      </Route>
 
-            <Route path="admin" element={<AdminApp />}>
-                <Route
-                    path=""
-                    element={<Navigate replace={true} to="dashboard" />}
-                />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="users" element={<Users />} />
-            </Route>
-        </Routes>
-    );
+      <Route path="admin" element={<AdminApp />}>
+        <Route path="" element={<Navigate replace={true} to="dashboard" />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="users" element={<Users />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
